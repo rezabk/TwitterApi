@@ -9,6 +9,7 @@ namespace BusinessLogic.Contracts
 {
     public interface ITweetRepository
     {
+        Task<List<TweetModel>> GetAllTweets();
         Task<bool> Add(TweetModel tweet);
 
     }

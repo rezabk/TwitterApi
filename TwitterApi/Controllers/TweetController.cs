@@ -19,10 +19,12 @@ namespace TwitterApi.Controllers
 
         [HttpGet]
         [Authorize]
-        //public async Task<IActionResult> GetAllTweets()
-        //{
-
-        //}
+        public async Task<IActionResult> GetAllTweets()
+        {
+            var userId = int.Parse(HttpContext.User.Identity.Name);
+            var res = await _bl.GetAllTweets(userId);
+            return StatusCode(res.StatusCode, res);
+        }
 
         [HttpPost]
         [Authorize]

@@ -10,7 +10,7 @@ namespace BusinessLogic.BusinessLogics.TweetBl
 {
     public interface ITweetBl
     {
-        Task<StandardResult> GetAllTweets();
+        Task<StandardResult> GetAllTweets(int userid);
         Task<StandardResult> NewTweet(int userid, NewTweetDto dto);
 
     }
